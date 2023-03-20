@@ -1,5 +1,4 @@
 import React from 'react';
-import Field from './Field';
 
 class Section extends React.Component {
     constructor(props) {
@@ -13,24 +12,9 @@ class Section extends React.Component {
     }
 
     render() {
-        const fields = this.props.fields;
             return (
                 <div>
                     <h2>{this.props.title}</h2>
-                    {fields && 
-                    (
-                        <div>
-                            {fields.map((field) => {
-                            return (
-                                <Field 
-                                    type={field.type} 
-                                    label={field.label}
-                                    editEnabled={this.props.editEnabled} />
-                            )
-                            })}
-
-                        </div>
-                    )}
                     {this.props.children && (
                         <div>
                             {this.props.children.map((child) => {
