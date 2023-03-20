@@ -4,7 +4,7 @@ import Field from './Field';
 class Section extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {editEnabled: false};
+        this.state = {editEnabled: true};
         this.onEditButtonClicked = this.onEditButtonClicked.bind(this);
     }
 
@@ -21,7 +21,12 @@ class Section extends React.Component {
                     (
                         <div>
                             {fields.map((field) => {
-                            return <Field type={field.type} label={field.label}/>
+                            return (
+                                <Field 
+                                    type={field.type} 
+                                    label={field.label}
+                                    editEnabled={this.state.editEnabled} />
+                            )
                             })}
                             <button
                                 onClick={this.onEditButtonClicked}>
