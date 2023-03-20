@@ -29,21 +29,19 @@ class Field extends React.Component {
             <div>
                 <label>
                     {this.props.label}
-                    {this.state.editEnabled ? 
+                    {this.props.editEnabled ? 
                         (
-                            <form onSubmit={this.onFieldSave}>
+                            <div>
                             <input 
                             type={this.props.type} 
                             onChange={this.onFieldChange}
                             value={this.state.fieldValue}
                             />
-                            <button type="submit">Save</button>
-                            </form>
+                            </div>
                         )
                         :
                         <div>
                             {this.state.fieldValue}
-                            <button onClick={this.onEditButtonClick}>Edit</button>
                         </div>
                     }
                 </label>
