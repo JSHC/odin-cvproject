@@ -14,12 +14,14 @@ class App extends React.Component {
       <div>
         <Section title="Personal Information" 
           editEnabled={this.state.editEnabled}
-          children={[
-            <PersonalInfo editEnabled={this.state.editEnabled}/>,
-            <Education editEnabled={this.state.editEnabled}/>
-          ]} 
-          onEditEnabledChanged={() => this.setState({editEnabled: !this.state.editEnabled})}
-          />
+          onEditEnabledChanged={() => this.setState({editEnabled: !this.state.editEnabled})}>
+            <PersonalInfo editEnabled={this.state.editEnabled}/>
+        </Section>
+        <Section title="Education"
+          editEnabled={this.state.editEnabled}
+          onEditEnabledChanged={() => this.setState({editEnabled: !this.state.editEnabled})}>
+            <Education editEnabled={this.state.editEnabled} />
+        </Section>
       </div>
     );
   }
