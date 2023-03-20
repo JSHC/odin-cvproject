@@ -17,12 +17,7 @@ class Section extends React.Component {
                     <h2>{this.props.title}</h2>
                     {this.props.children && (
                         <div>
-                            {this.props.children.map((child) => {
-                                console.log(child);
-                                return (
-                                    child
-                                )
-                            })}
+                            {this.props.children}
                         </div>
                     )}
                     <button
