@@ -9,9 +9,15 @@ class Field extends React.Component {
         }
 
         this.onFieldChange = this.onFieldChange.bind(this);
+        this.onFieldSave = this.onFieldSave.bind(this);
     }
     onFieldChange(e) {
         this.setState({fieldValue: e.target.value})
+    }
+
+    onFieldSave(e) {
+        e.preventDefault();
+        this.setState({editEnabled: false})
     }
 
     render() {
@@ -21,10 +27,13 @@ class Field extends React.Component {
                     {this.props.label}
                     {this.state.editEnabled ? 
                         (
-                            <form>
+                            <form onSubmit={this.onFieldSave}>
                             <input 
                             type={this.props.type} 
-                            onChange={this.onFieldChange} />
+                            onChange={this.onFieldChange}
+                            value={this.state.fieldValue}
+                            />
+                            <button type="submit">Save</button>
                             </form>
                         )
                         :
