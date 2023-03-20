@@ -4,12 +4,12 @@ import Field from './Field';
 class Section extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {editEnabled: true};
+        
         this.onEditButtonClicked = this.onEditButtonClicked.bind(this);
     }
 
     onEditButtonClicked() {
-        this.setState({editEnabled: !this.state.editEnabled});
+        this.props.onEditEnabledChanged();
     }
 
     render() {
@@ -25,15 +25,26 @@ class Section extends React.Component {
                                 <Field 
                                     type={field.type} 
                                     label={field.label}
-                                    editEnabled={this.state.editEnabled} />
+                                    editEnabled={this.props.editEnabled} />
                             )
                             })}
-                            <button
-                                onClick={this.onEditButtonClicked}>
-                                {this.state.editEnabled ? 'Save' : 'Edit'}
-                            </button>
+
                         </div>
                     )}
+                    {this.props.children && (
+                        <div>
+                            {this.props.children.map((child) => {
+                                console.log(child);
+                                return (
+                                    child
+                                )
+                            })}
+                        </div>
+                    )}
+                    <button
+                        onClick={this.onEditButtonClicked}>
+                        {this.props.editEnabled ? 'Save' : 'Edit'}
+                    </button>
                 </div>
             )
     }
