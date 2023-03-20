@@ -9,19 +9,9 @@ class Field extends React.Component {
         }
 
         this.onFieldChange = this.onFieldChange.bind(this);
-        this.onFieldSave = this.onFieldSave.bind(this);
-        this.onEditButtonClick = this.onEditButtonClick.bind(this);
     }
     onFieldChange(e) {
         this.setState({fieldValue: e.target.value})
-    }
-
-    onFieldSave(e) {
-        e.preventDefault();
-        this.setState({editEnabled: false})
-    }
-    onEditButtonClick(e) {
-        this.setState({editEnabled: true});
     }
 
     render() {
