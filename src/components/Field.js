@@ -10,6 +10,7 @@ class Field extends React.Component {
 
         this.onFieldChange = this.onFieldChange.bind(this);
         this.onFieldSave = this.onFieldSave.bind(this);
+        this.onEditButtonClick = this.onEditButtonClick.bind(this);
     }
     onFieldChange(e) {
         this.setState({fieldValue: e.target.value})
@@ -18,6 +19,9 @@ class Field extends React.Component {
     onFieldSave(e) {
         e.preventDefault();
         this.setState({editEnabled: false})
+    }
+    onEditButtonClick(e) {
+        this.setState({editEnabled: true});
     }
 
     render() {
@@ -37,7 +41,10 @@ class Field extends React.Component {
                             </form>
                         )
                         :
-                        <div>{this.state.fieldValue}</div>
+                        <div>
+                            {this.state.fieldValue}
+                            <button onClick={this.onEditButtonClick}>Edit</button>
+                        </div>
                     }
                 </label>
             </div>
