@@ -8,7 +8,10 @@ class Field extends React.Component {
             editEnabled: true,
         }
 
-
+        this.onFieldChange = this.onFieldChange.bind(this);
+    }
+    onFieldChange(e) {
+        this.setState({fieldValue: e.target.value})
     }
 
     render() {
@@ -16,6 +19,17 @@ class Field extends React.Component {
             <div>
                 <label>
                     {this.props.label}
+                    {this.state.editEnabled ? 
+                        (
+                            <form>
+                            <input 
+                            type={this.props.type} 
+                            onChange={this.onFieldChange} />
+                            </form>
+                        )
+                        :
+                        <div>{this.state.fieldValue}</div>
+                    }
                 </label>
             </div>
         )
