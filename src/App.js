@@ -1,4 +1,4 @@
-import PersonalInfo from "./components/PersonalInfo";
+import PersonalInfoSection from "./components/PersonalInfoSection";
 import Education from "./components/Education";
 import Section from "./components/Section";
 import React from "react";
@@ -12,11 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Section title="Personal Information" 
-          editEnabled={this.state.editEnabled}
-          onEditEnabledChanged={() => this.setState({editEnabled: !this.state.editEnabled})}>
-            <PersonalInfo editEnabled={this.state.editEnabled}/>
-        </Section>
+        <PersonalInfoSection />
         <Section title="Education"
           editEnabled={this.state.editEnabled}
           onEditEnabledChanged={() => this.setState({editEnabled: !this.state.editEnabled})}>
