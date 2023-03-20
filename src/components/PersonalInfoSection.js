@@ -15,7 +15,7 @@ class PersonalInfo extends React.Component {
     }
 
     render() {
-        const {editEnabled} = this.state;
+        const { editEnabled } = this.state;
         return (
             <Section 
                 label="Personal Information"
