@@ -9,10 +9,12 @@ class EducationSection extends React.Component {
 
         this.state = {
             editEnabled: true,
-            educations: [],
+            educations: [{id: uniqid(), canRemove: false}],
         }
+
         this.onEditEnabledChanged = this.onEditEnabledChanged.bind(this);
         this.onAddButtonClicked = this.onAddButtonClicked.bind(this);
+        this.onRemoveEducation = this.onRemoveEducation.bind(this);
     }
 
     onEditEnabledChanged() {
@@ -20,24 +22,41 @@ class EducationSection extends React.Component {
     }
 
     onAddButtonClicked() {
-        console.log('add clicked');
-        this.setState({
-            educations: this.state.educations.concat(<EducationComponent editEnabled={this.state.editEnabled} key={uniqid()}/>)
-        })
+        this.addEducation(true)
     }
 
+    addEducation(canRemove) {
+        this.setState((prevState) => ({
+            educations: prevState.educations.concat({id: uniqid(), canRemove: canRemove})
+        }))
+    }
+
+    onRemoveEducation(e, id) {
+        const newEducations = this.state.educations.filter((item) => {
+            return id !== item.id;
+        })
+        this.setState({educations: newEducations})
+    }
 
     render() {
         const { editEnabled } = this.state;
+        
         return (
             <Section
                 label="Education"
                 editEnabled={editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
             >
-                <EducationComponent editEnabled={editEnabled} />
-                {this.state.educations}
-                <button onClick={this.onAddButtonClicked} >Add</button>
+                {this.state.educations.map((item) => {
+                    return <EducationComponent 
+                                id={item.id} 
+                                editEnabled={this.state.editEnabled}
+                                onRemoveButtonClicked={this.onRemoveEducation}
+                                key={item.id}
+                                canRemove={item.canRemove}
+                                />;
+                })}
+                <button onClick={this.onAddButtonClicked}>Add</button>
             </Section>
         )
     }

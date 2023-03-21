@@ -22,7 +22,9 @@ class EducationComponent extends React.Component {
                     label="End year"
                     type="number"
                     editEnabled={editEnabled} />
-                <button onClick={this.props.onRemoveButtonClicked}>Remove</button>
+                {this.props.canRemove && 
+                <button onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}>Remove</button>
+                }
             </div>
         )
     }
