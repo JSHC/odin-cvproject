@@ -1,7 +1,7 @@
 import React from 'react';
 import Field from './Field';
 
-class PracticalExperienceComponent {
+class PracticalExperienceComponent extends React.Component {
 
     render() {
         return (
