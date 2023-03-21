@@ -1,5 +1,5 @@
 import React from 'react';
-import Field from './Field';
+import EducationComponent from './EducationComponent';
 import Section from './Section';
 
 class EducationSection extends React.Component {
@@ -22,22 +22,7 @@ class EducationSection extends React.Component {
                 editEnabled={editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
             >
-                <Field 
-                    label="School Name"
-                    type="text" 
-                    editEnabled={editEnabled} />
-                <Field 
-                    label="Education"
-                    type="text"
-                    editEnabled={editEnabled} />
-                <Field
-                    label="Start year"
-                    type="number"
-                    editEnabled={editEnabled} />
-                <Field
-                    label="End year"
-                    type="number"
-                    editEnabled={editEnabled} />
+                <EducationComponent editEnabled={editEnabled} />
             </Section>
         )
     }
