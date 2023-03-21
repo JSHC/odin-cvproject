@@ -16,6 +16,7 @@ class PracticalExperienceSection extends React.Component{
 
         this.onEditEnabledChanged = this.onEditEnabledChanged.bind(this);
         this.onRemoveButtonClicked = this.onRemoveButtonClicked.bind(this);
+        this.onAddButtonClicked = this.onAddButtonClicked.bind(this);
     }
 
     onEditEnabledChanged() {
@@ -28,6 +29,14 @@ class PracticalExperienceSection extends React.Component{
             return id !== item.id;
         })
         this.setState({practicalExperiences: newPracticalExperiences});
+    }
+
+    onAddButtonClicked() {
+        this.setState((prevState) => (
+            {practicalExperiences: prevState.practicalExperiences.concat(
+                {id: uniqid(), canRemove: true}
+            )}
+        ))
     }
 
     render() {
@@ -47,6 +56,7 @@ class PracticalExperienceSection extends React.Component{
                         canRemove={item.canRemove}
                     />
                 })}
+                <button onClick={this.onAddButtonClicked}>Add</button>
             </Section>
         )
     }
