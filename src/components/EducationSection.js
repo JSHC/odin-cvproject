@@ -8,10 +8,15 @@ class EducationSection extends React.Component {
 
         this.state = {editEnabled: true}
         this.onEditEnabledChanged = this.onEditEnabledChanged.bind(this);
+        this.onAddButtonClicked = this.onAddButtonClicked.bind(this);
     }
 
     onEditEnabledChanged() {
         this.setState({editEnabled: !this.state.editEnabled})
+    }
+
+    onAddButtonClicked() {
+        console.log('add clicked');
     }
 
     render() {
@@ -23,6 +28,7 @@ class EducationSection extends React.Component {
                 onEditEnabledChanged={this.onEditEnabledChanged}
             >
                 <EducationComponent editEnabled={editEnabled} />
+                <button onClick={this.onAddButtonClicked} >Add</button>
             </Section>
         )
     }
