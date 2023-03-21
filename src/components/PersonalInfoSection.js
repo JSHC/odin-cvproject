@@ -38,9 +38,9 @@ class PersonalInfoSection extends React.Component {
                     type="text"
                     editEnabled={editEnabled}
                 />
-                <Field 
+                 <Field 
                     label="Email"
-                    type="text"
+                    type="email"
                     editEnabled={editEnabled}
                 />
             </Section>
