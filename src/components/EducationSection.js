@@ -43,7 +43,7 @@ class EducationSection extends React.Component {
         
         return (
             <Section
-                label="Education"
+                title="Education"
                 editEnabled={editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
             >

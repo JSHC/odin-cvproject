@@ -19,7 +19,7 @@ class PersonalInfoSection extends React.Component {
         
         return (
             <Section 
-                label="Personal Information"
+                title="Personal Information"
                 editEnabled={this.state.editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
             >
