@@ -32,6 +32,9 @@ class PracticalExperienceComponent extends React.Component {
                     type="date"
                     editEnabled={editEnabled}
                 />
+                {this.props.canRemove && 
+                    <button onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}>Remove</button>
+                }
             </div>
         )
     }
