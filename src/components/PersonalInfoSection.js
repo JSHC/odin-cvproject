@@ -2,7 +2,7 @@ import React from 'react';
 import Field from './Field';
 import Section from './Section';
 
-class PersonalInfo extends React.Component {
+class PersonalInfoSection extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,6 +16,7 @@ class PersonalInfo extends React.Component {
 
     render() {
         const { editEnabled } = this.state;
+        
         return (
             <Section 
                 label="Personal Information"
@@ -47,4 +48,4 @@ class PersonalInfo extends React.Component {
     }
 }
 
-export default PersonalInfo;
+export default PersonalInfoSection;
