@@ -3,6 +3,35 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }
-.school-name {
+
+.education-container {
+    grid-row: 1;
+}
+
+.education {
     font-weight: bold;
+}
+
+.school-name-container {
+    grid-row: 2;
+}
+
+.school-name {
+    font-weight: lighter;
+    color: #555;
+}
+
+.years-container {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5px;
+    margin-left: 2rem;
+    justify-self: end;
+}
+
+.remove-education-button {
+    grid-row: -2;
+    align-self: center;
+    justify-self: start;
 }
