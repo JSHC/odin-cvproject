@@ -1,5 +1,6 @@
 import React from 'react';
 import Field from './Field';
+import '../styles/EducationComponent.css';
 
 class EducationComponent extends React.Component {
     render() {
