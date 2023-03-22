@@ -17,10 +17,11 @@ class Field extends React.Component {
     render() {
         return (
             <div className={this.props.className}>
+            {this.props.editEnabled ? 
+            (
                 <label className={this.props.className + '-label'}>
                     {this.props.label}
-                    {this.props.editEnabled ? 
-                        (
+                    
                             <div>
                             <input 
                             type={this.props.type} 
@@ -28,13 +29,14 @@ class Field extends React.Component {
                             value={this.state.fieldValue}
                             />
                             </div>
-                        )
-                        :
-                        <div>
-                            {this.state.fieldValue}
-                        </div>
-                    }
+                        
                 </label>
+            )
+            :
+                <div>
+                    {this.state.fieldValue}
+                </div>
+            }
             </div>
         )
     }
