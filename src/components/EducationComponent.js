@@ -31,7 +31,12 @@ class EducationComponent extends React.Component {
                     editEnabled={editEnabled} />
                 </div>
                 {this.props.canRemove && 
-                <button onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}>Remove</button>
+                    <button 
+                        onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}
+                        className="remove-education-button"
+                    >
+                        Remove
+                    </button>
                 }
             </div>
         )
