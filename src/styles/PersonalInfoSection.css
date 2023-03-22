@@ -2,12 +2,8 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-items: start;
-}
-
-.personal-info-section div{
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-items: start;
+    border-bottom: 1px solid #999;
+    padding-bottom: 1rem;
 }
 
 .email-container {
@@ -15,6 +11,8 @@
 }
 
 .name-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
     grid-column: 1 / span 2;
 }
 
