@@ -1,8 +1,5 @@
 .app {
     display: grid;
     justify-items: center;
-}
-
-.cv-container {
-
+    font-family: Helvetica, Arial, sens-serif;
 }
