@@ -8,14 +8,14 @@ class EducationComponent extends React.Component {
         return (
             <div className={this.props.className}>
                 <Field 
-                    label="School Name"
-                    type="text" 
-                    className="school-name"
-                    editEnabled={editEnabled} />
-                <Field 
                     label="Education"
                     type="text"
                     className="education"
+                    editEnabled={editEnabled} />
+                <Field 
+                    label="School Name"
+                    type="text" 
+                    className="school-name"
                     editEnabled={editEnabled} />
                 <div className='years-container'>
                 <Field
