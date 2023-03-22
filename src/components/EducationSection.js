@@ -56,6 +56,7 @@ class EducationSection extends React.Component {
                                 onRemoveButtonClicked={this.onRemoveEducation}
                                 key={item.id}
                                 canRemove={item.canRemove}
+                                className="education-component"
                                 />;
                 })}
                 <button onClick={this.onAddButtonClicked}>Add</button>

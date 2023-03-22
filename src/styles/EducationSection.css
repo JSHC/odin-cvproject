@@ -1,4 +1,10 @@
 .education-section {
     display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+}
+
+.education-component {
+    display: grid;
     grid-template-columns: 1fr 1fr;
 }

@@ -6,7 +6,7 @@ class EducationComponent extends React.Component {
     render() {
         const { editEnabled } = this.props;
         return (
-            <div>
+            <div className={this.props.className}>
                 <Field 
                     label="School Name"
                     type="text" 
