@@ -25,6 +25,7 @@ class PersonalInfoSection extends React.Component {
                 onEditEnabledChanged={this.onEditEnabledChanged}
                 className="personal-info-section"
             >
+            <div class="name-container">
                 <Field 
                     label="Firstname"
                     type="text"
@@ -37,6 +38,7 @@ class PersonalInfoSection extends React.Component {
                     editEnabled={editEnabled}
                     className="last-name"
                 />
+            </div>
                 <Field 
                     label="Telephone"
                     type="text"
