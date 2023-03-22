@@ -10,6 +10,6 @@
     justify-items: start;
 }
 
-.email {
+.email-container {
     grid-row: 3;
 }
