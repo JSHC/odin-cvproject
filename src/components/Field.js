@@ -17,7 +17,7 @@ class Field extends React.Component {
     render() {
         return (
             <div>
-                <label>
+                <label className={this.props.className + '-label'}>
                     {this.props.label}
                     {this.props.editEnabled ? 
                         (
@@ -30,7 +30,7 @@ class Field extends React.Component {
                             </div>
                         )
                         :
-                        <div>
+                        <div className={this.props.className}>
                             {this.state.fieldValue}
                         </div>
                     }
