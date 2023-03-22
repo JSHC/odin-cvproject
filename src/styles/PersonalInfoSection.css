@@ -13,3 +13,8 @@
 .email-container {
     grid-row: 3;
 }
+
+.name-container {
+    grid-column: 1 / span 2;
+}
+}
