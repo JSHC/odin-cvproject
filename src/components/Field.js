@@ -27,6 +27,8 @@ class Field extends React.Component {
                             type={this.props.type} 
                             onChange={this.onFieldChange}
                             value={this.state.fieldValue}
+                            className={this.props.className + '-input'}
+                            size={this.state.fieldValue.length + 2}
                             />
                             </div>
                 </label>
