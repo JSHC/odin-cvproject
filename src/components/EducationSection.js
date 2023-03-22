@@ -2,6 +2,7 @@ import React from 'react';
 import EducationComponent from './EducationComponent';
 import Section from './Section';
 import uniqid from 'uniqid';
+import '../styles/EducationSection.css';
 
 class EducationSection extends React.Component {
     constructor(props) {
