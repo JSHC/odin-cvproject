@@ -29,21 +29,25 @@ class PersonalInfoSection extends React.Component {
                     label="Firstname"
                     type="text"
                     editEnabled={editEnabled}
+                    className="first-name"
                 />
                 <Field 
                     label="Lastname"
                     type="text"
                     editEnabled={editEnabled}
+                    className="last-name"
                 />
                 <Field 
                     label="Telephone"
                     type="text"
                     editEnabled={editEnabled}
+                    className="telephone"
                 />
                  <Field 
                     label="Email"
                     type="email"
                     editEnabled={editEnabled}
+                    className="email"
                 />
             </Section>
         )
