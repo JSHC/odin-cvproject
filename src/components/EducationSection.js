@@ -47,6 +47,7 @@ class EducationSection extends React.Component {
                 title="Education"
                 editEnabled={editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
+                className="education-section"
             >
                 {this.state.educations.map((item) => {
                     return <EducationComponent 
