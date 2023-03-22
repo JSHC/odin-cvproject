@@ -17,6 +17,7 @@ class EducationComponent extends React.Component {
                     type="text"
                     className="education"
                     editEnabled={editEnabled} />
+                <div className='years-container'>
                 <Field
                     label="Start year"
                     type="number"
@@ -27,6 +28,7 @@ class EducationComponent extends React.Component {
                     type="number"
                     className="end-year"
                     editEnabled={editEnabled} />
+                </div>
                 {this.props.canRemove && 
                 <button onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}>Remove</button>
                 }
