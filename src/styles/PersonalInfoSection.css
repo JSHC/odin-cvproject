@@ -21,4 +21,7 @@
 .first-name-container {
     margin-right: .3rem;
 }
+
+.first-name, .first-name-input, .last-name, .last-name-input {
+    font-size: 22px;
 }
