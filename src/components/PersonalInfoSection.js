@@ -1,6 +1,7 @@
 import React from 'react';
 import Field from './Field';
 import Section from './Section';
+import '../styles/PersonalInfoSection.css';
 
 class PersonalInfoSection extends React.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class PersonalInfoSection extends React.Component {
                 title="Personal Information"
                 editEnabled={this.state.editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
+                className="personal-info-section"
             >
                 <Field 
                     label="Firstname"
