@@ -1,0 +1,15 @@
+.personal-info-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+}
+
+.personal-info-section div{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: start;
+}
+
+.email {
+    grid-row: 3;
+}
