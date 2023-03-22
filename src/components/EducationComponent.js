@@ -23,6 +23,7 @@ class EducationComponent extends React.Component {
                     type="number"
                     className="start-year"
                     editEnabled={editEnabled} />
+                <span>-</span>
                 <Field
                     label="End year"
                     type="number"
