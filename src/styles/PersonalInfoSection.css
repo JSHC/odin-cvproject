@@ -17,4 +17,8 @@
 .name-container {
     grid-column: 1 / span 2;
 }
+
+.first-name-container {
+    margin-right: .3rem;
+}
 }
