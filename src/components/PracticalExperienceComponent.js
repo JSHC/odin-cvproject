@@ -1,5 +1,6 @@
 import React from 'react';
 import Field from './Field';
+import '../styles/PracticalExperienceComponent.css';
 
 class PracticalExperienceComponent extends React.Component {
 
