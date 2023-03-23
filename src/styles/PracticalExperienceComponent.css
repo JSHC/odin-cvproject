@@ -1,7 +1,7 @@
 .practical-experience-component {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr auto;
 }
 
 .title-company-wrapper {
@@ -20,7 +20,8 @@
 
 .description-container {
     grid-row: 2;
-    margin-top: 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .practical-experience-dates-container {
