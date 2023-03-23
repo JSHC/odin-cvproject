@@ -6,8 +6,3 @@
 .section-title {
     margin: 1rem 0 .5rem 0;
 }
-
-.section:last-of-type {
-    border: none;
-    padding-bottom: 0;
-}
