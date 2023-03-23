@@ -60,7 +60,10 @@ class EducationSection extends React.Component {
                                 className="education-component"
                                 />;
                 })}
-                <button onClick={this.onAddButtonClicked}>Add</button>
+
+                {this.props.previewEnabled === false && 
+                    <button onClick={this.onAddButtonClicked}>Add</button>
+                }
             </Section>
         )
     }
