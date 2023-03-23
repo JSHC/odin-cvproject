@@ -40,7 +40,7 @@ class EducationSection extends React.Component {
     }
 
     render() {
-        const { editEnabled } = this.state;
+        const editEnabled = this.state.editEnabled && !this.props.previewEnabled;
         
         return (
             <Section
@@ -53,7 +53,7 @@ class EducationSection extends React.Component {
                 {this.state.educations.map((item) => {
                     return <EducationComponent 
                                 id={item.id} 
-                                editEnabled={this.state.editEnabled}
+                                editEnabled={editEnabled}
                                 onRemoveButtonClicked={this.onRemoveEducation}
                                 key={item.id}
                                 canRemove={item.canRemove}

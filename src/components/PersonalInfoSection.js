@@ -16,12 +16,12 @@ class PersonalInfoSection extends React.Component {
     }
 
     render() {
-        const { editEnabled } = this.state;
+        const editEnabled = this.state.editEnabled && !this.props.previewEnabled;
         
         return (
             <Section 
                 title="Personal Information"
-                editEnabled={this.state.editEnabled}
+                editEnabled={editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
                 className="personal-info-section"
                 previewEnabled={this.props.previewEnabled}

@@ -40,7 +40,7 @@ class PracticalExperienceSection extends React.Component{
     }
 
     render() {
-        const { editEnabled } = this.state;
+        const editEnabled = this.state.editEnabled && !this.props.previewEnabled;
         return (
             <Section
                 title="Practical Experience"
@@ -51,7 +51,7 @@ class PracticalExperienceSection extends React.Component{
                 {this.state.practicalExperiences.map((item) => {
                     return <PracticalExperienceComponent 
                         id={item.id}
-                        editEnabled={this.state.editEnabled}
+                        editEnabled={editEnabled}
                         onRemoveButtonClicked={this.onRemoveButtonClicked}
                         key={item.id}
                         canRemove={item.canRemove}

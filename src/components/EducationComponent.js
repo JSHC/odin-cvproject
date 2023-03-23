@@ -4,7 +4,7 @@ import '../styles/EducationComponent.css';
 
 class EducationComponent extends React.Component {
     render() {
-        const { editEnabled } = this.props;
+        const editEnabled = this.props.editEnabled && !this.props.previewEnabled;
         return (
             <div className={this.props.className}>
                 <Field 
@@ -30,7 +30,7 @@ class EducationComponent extends React.Component {
                     className="end-year"
                     editEnabled={editEnabled} />
                 </div>
-                {this.props.canRemove && 
+                {(this.props.canRemove && editEnabled) && 
                     <button 
                         onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}
                         className="remove-education-button"
