@@ -54,6 +54,7 @@ class PracticalExperienceSection extends React.Component{
                         onRemoveButtonClicked={this.onRemoveButtonClicked}
                         key={item.id}
                         canRemove={item.canRemove}
+                        className="practical-experience-component"
                     />
                 })}
                 <button onClick={this.onAddButtonClicked}>Add</button>
