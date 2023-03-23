@@ -9,16 +9,16 @@ class PracticalExperienceComponent extends React.Component {
         return (
             <div className={this.props.className}>
                 <Field 
-                    label="Company Name"
-                    type="text"
-                    editEnabled={editEnabled}
-                    className="company-name"
-                />
-                <Field 
                     label="Position Title"
                     type="text"
                     editEnabled={editEnabled}
                     className="position-title"
+                />
+                <Field 
+                    label="Company Name"
+                    type="text"
+                    editEnabled={editEnabled}
+                    className="company-name"
                 />
                 <Field 
                     label="Description"
