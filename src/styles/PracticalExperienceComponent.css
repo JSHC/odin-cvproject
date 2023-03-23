@@ -1,0 +1,32 @@
+.practical-experience-component {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.company-name-container {
+    grid-row: 1;
+}
+
+.position-title-container {
+    grid-row: 2;
+}
+
+.description-container {
+    grid-row: 3;
+}
+
+.practical-experience-dates-container {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-column: 1fr 1fr;
+}
+
+.start-date-container {
+    grid-column: 1;
+}
+
+.end-date-container {
+    grid-column: 2;
+}
