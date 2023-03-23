@@ -11,12 +11,19 @@ class App extends React.Component {
       editEnabled: true,
       previewEnabled: false
     }
+
+    this.onTogglePreviewClicked = this.onTogglePreviewClicked.bind(this);
+  }
+
+  onTogglePreviewClicked() {
+    this.setState({previewEnabled: !this.state.previewEnabled});
   }
 
   render() {
     return (
       <div className="app">
       <h1>CV Application</h1>
+      <button>Toggle preview mode</button>
         <div className="cv-container">
           <PersonalInfoSection />
           <EducationSection />
