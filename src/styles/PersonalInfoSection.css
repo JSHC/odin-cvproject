@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-items: start;
-    border-bottom: 1px solid #999;
     padding-bottom: 1rem;
 }
 
