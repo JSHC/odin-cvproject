@@ -25,7 +25,7 @@ class PersonalInfoSection extends React.Component {
                 onEditEnabledChanged={this.onEditEnabledChanged}
                 className="personal-info-section"
             >
-            <div class="name-container">
+            <div className="name-container">
                 <Field 
                     label="Firstname"
                     type="text"
