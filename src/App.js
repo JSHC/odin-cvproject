@@ -7,7 +7,10 @@ import './styles/App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {editEnabled: true}
+    this.state = {
+      editEnabled: true,
+      previewEnabled: false
+    }
   }
 
   render() {
