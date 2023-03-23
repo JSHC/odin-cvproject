@@ -26,7 +26,9 @@ class App extends React.Component {
       <label>
       Toggle preview mode
       </label>
-      <button className={`toggle-button ${this.state.previewEnabled ? 'enabled' : 'disabled'}`} onClick={this.onTogglePreviewClicked}></button>
+      <div className={`toggle-button ${this.state.previewEnabled ? 'enabled' : 'disabled'}`} onClick={this.onTogglePreviewClicked}>
+        <div className="toggle-button-inner"></div>
+      </div>
         <div className="cv-container">
           <PersonalInfoSection />
           <EducationSection />
