@@ -13,7 +13,7 @@ class Section extends React.Component {
 
     render() {
             return (
-                <div className={this.props.className}>
+                <div className={`${this.props.className} section`}>
                     <h2>{this.props.title}</h2>
                     {this.props.children && (
                         <div>
