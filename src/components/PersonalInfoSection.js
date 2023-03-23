@@ -24,6 +24,7 @@ class PersonalInfoSection extends React.Component {
                 editEnabled={this.state.editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
                 className="personal-info-section"
+                previewEnabled={this.props.previewEnabled}
             >
             <div className="name-container">
                 <Field 

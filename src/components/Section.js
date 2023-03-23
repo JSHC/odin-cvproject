@@ -21,10 +21,13 @@ class Section extends React.Component {
                             {this.props.children}
                         </div>
                     )}
-                    <button
+
+                    {this.props.previewEnabled === false && 
+                        <button
                         onClick={this.onEditButtonClicked}>
                         {this.props.editEnabled ? 'Save' : 'Edit'}
-                    </button>
+                        </button>
+                    }
                 </div>
             )
     }
