@@ -35,6 +35,7 @@ class PracticalExperienceComponent extends React.Component {
                         editEnabled={editEnabled}
                         className="start-date"
                     />
+                    <span>-</span>
                     <Field
                         label="End Date"
                         type="date"
