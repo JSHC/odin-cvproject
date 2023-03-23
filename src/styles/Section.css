@@ -1,0 +1,7 @@
+.section {
+    border-bottom: 1px solid #aaa;
+}
+
+.section:last-of-type {
+    border: none;
+}
