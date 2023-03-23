@@ -30,9 +30,9 @@ class App extends React.Component {
         <div className="toggle-button-inner"></div>
       </div>
         <div className="cv-container">
-          <PersonalInfoSection />
-          <EducationSection />
-          <PracticalExperienceSection />
+          <PersonalInfoSection previewEnabled={this.state.previewEnabled}/>
+          <EducationSection previewEnabled={this.state.previewEnabled}/>
+          <PracticalExperienceSection previewEnabled={this.state.previewEnabled}/>
         </div>
       </div>
     );
