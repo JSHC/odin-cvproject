@@ -3,3 +3,8 @@
     justify-items: center;
     font-family: Helvetica, Arial, sens-serif;
 }
+
+.toggle-button {
+    width: 50px;
+    height: 25px;
+}
