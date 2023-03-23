@@ -26,18 +26,20 @@ class PracticalExperienceComponent extends React.Component {
                     editEnabled={editEnabled}
                     className="description"
                 />
-                <Field
-                    label="Start Date"
-                    type="date"
-                    editEnabled={editEnabled}
-                    className="start-date"
-                />
-                <Field
-                    label="End Date"
-                    type="date"
-                    editEnabled={editEnabled}
-                    className="end-date"
-                />
+                <div className="practical-experience-dates-container">
+                    <Field
+                        label="Start Date"
+                        type="date"
+                        editEnabled={editEnabled}
+                        className="start-date"
+                    />
+                    <Field
+                        label="End Date"
+                        type="date"
+                        editEnabled={editEnabled}
+                        className="end-date"
+                    />
+                </div>
                 {this.props.canRemove && 
                     <button onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}>Remove</button>
                 }
