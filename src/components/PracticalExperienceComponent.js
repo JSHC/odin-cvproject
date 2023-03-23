@@ -8,6 +8,7 @@ class PracticalExperienceComponent extends React.Component {
         const { editEnabled } = this.props;
         return (
             <div className={this.props.className}>
+            <div className='title-company-wrapper'>
                 <Field 
                     label="Position Title"
                     type="text"
@@ -20,6 +21,7 @@ class PracticalExperienceComponent extends React.Component {
                     editEnabled={editEnabled}
                     className="company-name"
                 />
+            </div>
                 <Field 
                     label="Description"
                     type="text"

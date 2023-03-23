@@ -1,7 +1,9 @@
 .practical-experience-component {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+.title-company-wrapper {
+    display: grid;
+    grid-row: 1;
 }
 
 .company-name-container {
