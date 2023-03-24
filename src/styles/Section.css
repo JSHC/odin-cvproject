@@ -1,6 +1,6 @@
 .section {
     border-bottom: 1px solid #aaa;
-    padding-bottom: 1rem;
+    padding: 0 2rem 1rem 2rem;
     color: #444;
 }
 
