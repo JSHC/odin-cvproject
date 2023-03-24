@@ -3,6 +3,7 @@ import React from "react";
 import EducationSection from "./components/EducationSection";
 import PracticalExperienceSection from "./components/PracticalExperienceSection";
 import './styles/App.css';
+import ToggleButton from "./components/ToggleButton";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,9 +27,9 @@ class App extends React.Component {
       <label>
       Toggle preview mode
       </label>
-      <div className={`toggle-button ${this.state.previewEnabled ? 'enabled' : 'disabled'}`} onClick={this.onTogglePreviewClicked}>
-        <div className="toggle-button-inner"></div>
-      </div>
+      <ToggleButton 
+        previewEnabled={this.state.previewEnabled} 
+        onToggleChanged={this.onTogglePreviewClicked} />
         <div className="cv-container">
           <PersonalInfoSection previewEnabled={this.state.previewEnabled}/>
           <EducationSection previewEnabled={this.state.previewEnabled}/>
