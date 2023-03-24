@@ -14,12 +14,14 @@ class PracticalExperienceComponent extends React.Component {
                     type="text"
                     editEnabled={editEnabled}
                     className="position-title"
+                    size={25}
                 />
                 <Field 
                     label="Company Name"
                     type="text"
                     editEnabled={editEnabled}
                     className="company-name"
+                    size={35}
                 />
             </div>
                 <Field 

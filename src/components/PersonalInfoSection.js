@@ -32,12 +32,14 @@ class PersonalInfoSection extends React.Component {
                     type="text"
                     editEnabled={editEnabled}
                     className="first-name"
+                    size={14}
                 />
                 <Field 
                     label="Lastname"
                     type="text"
                     editEnabled={editEnabled}
                     className="last-name"
+                    size={14}
                 />
             </div>
                 <Field 
@@ -45,12 +47,14 @@ class PersonalInfoSection extends React.Component {
                     type="text"
                     editEnabled={editEnabled}
                     className="telephone"
+                    size={20}
                 />
                  <Field 
                     label="Email"
                     type="email"
                     editEnabled={editEnabled}
                     className="email"
+                    size={35}
                 />
             </Section>
         )

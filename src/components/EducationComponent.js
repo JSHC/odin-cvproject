@@ -11,24 +11,32 @@ class EducationComponent extends React.Component {
                     label="Education"
                     type="text"
                     className="education"
-                    editEnabled={editEnabled} />
+                    editEnabled={editEnabled} 
+                    size={30}                        
+                    />
+                    
                 <Field 
                     label="School Name"
                     type="text" 
                     className="school-name"
-                    editEnabled={editEnabled} />
+                    editEnabled={editEnabled} 
+                    size={35}
+                    />
                 <div className='years-container'>
                 <Field
                     label="Start year"
                     type="number"
                     className="start-year"
-                    editEnabled={editEnabled} />
+                    editEnabled={editEnabled}
+                    size={5} />
                 <span>-</span>
                 <Field
                     label="End year"
                     type="number"
                     className="end-year"
-                    editEnabled={editEnabled} />
+                    editEnabled={editEnabled} 
+                    size={5}
+                    />
                 </div>
                 {(this.props.canRemove && editEnabled) && 
                     <button 
