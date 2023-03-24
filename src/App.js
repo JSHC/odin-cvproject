@@ -24,12 +24,14 @@ class App extends React.Component {
     return (
       <div className="app">
       <h1>CV Application</h1>
-      <label>
-      Toggle preview mode
-      </label>
-      <ToggleButton 
-        previewEnabled={this.state.previewEnabled} 
-        onToggleChanged={this.onTogglePreviewClicked} />
+      <div className='preview-container'>
+        <span>
+        Toggle preview mode
+        </span>
+        <ToggleButton 
+          previewEnabled={this.state.previewEnabled} 
+          onToggleChanged={this.onTogglePreviewClicked} />
+        </div>
         <div className="cv-container">
           <PersonalInfoSection previewEnabled={this.state.previewEnabled}/>
           <EducationSection previewEnabled={this.state.previewEnabled}/>

@@ -4,3 +4,9 @@
     font-family: Helvetica, Arial, sens-serif;
 }
 
+.preview-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
