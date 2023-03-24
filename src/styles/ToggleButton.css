@@ -30,3 +30,27 @@
     box-sizing: border-box;
     transition: margin-left 200ms;
 }
+
+.toggle-button.disabled .toggle-button-circle {
+    margin-left: 10%;
+}
+
+.toggle-button.enabled .toggle-button-circle {
+    margin-left: 70%;
+}
+
+.toggle-button.enabled {
+    background-color: rgb(125, 212, 125);
+}
+
+.toggle-button.enabled:hover {
+    background-color: rgb(152, 230, 152);
+}
+
+.toggle-button.disabled {
+    background-color: rgb(255, 102, 102);
+}
+
+.toggle-button.disabled:hover {
+    background-color: rgb(248, 131, 131);
+}
