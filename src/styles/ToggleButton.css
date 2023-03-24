@@ -10,10 +10,11 @@
 }
 
 .toggle-button-inner {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 70%;
     border-radius: 10px;
-    background-color: #888;
+    border: 1px solid #666;
+    background-color: rgba(255,255,255, 0.6);
     align-self: center;
     justify-self: center;
     display: grid;
@@ -22,7 +23,7 @@
 .toggle-button-circle {
     width: 10px;
     height: 10px;
-    background-color: #eee;
+    background-color: #ccc;
     border: 1px solid #333;
     border-radius: 100%;
     align-self: center;
@@ -36,7 +37,7 @@
 }
 
 .toggle-button.enabled .toggle-button-circle {
-    margin-left: 70%;
+    margin-left: 60%;
 }
 
 .toggle-button.enabled {
