@@ -1,0 +1,6 @@
+.year-range-component {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    justify-items: center;
+}

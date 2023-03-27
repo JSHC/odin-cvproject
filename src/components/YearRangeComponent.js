@@ -13,7 +13,7 @@ class YearRangeComponent extends React.Component {
                     editEnabled={editEnabled}
                     className="start-year"
                 />
-                <span>-</span>
+                <span className='divider'>-</span>
                 <Field 
                     label="End Year"
                     type="number"
