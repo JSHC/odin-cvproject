@@ -6,7 +6,7 @@ class YearRangeComponent extends React.Component {
     render() {
         const { editEnabled } = this.props;
         return (
-            <div className='year-range-component'>
+            <div className={`year-range-component ${this.props.className}`}>
                 <Field 
                     label="Start Year"
                     type="number"
