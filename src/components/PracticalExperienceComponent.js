@@ -1,6 +1,7 @@
 import React from 'react';
 import Field from './Field';
 import '../styles/PracticalExperienceComponent.css';
+import YearRangeComponent from './YearRangeComponent';
 
 class PracticalExperienceComponent extends React.Component {
 
@@ -30,23 +31,9 @@ class PracticalExperienceComponent extends React.Component {
                     editEnabled={editEnabled}
                     className="description"
                 />
-                <div className="practical-experience-dates-container">
-                    <Field
-                        label="Start Year"
-                        type="number"
-                        size={5}
-                        editEnabled={editEnabled}
-                        className="start-year"
-                    />
-                    <span>-</span>
-                    <Field
-                        label="End Year"
-                        type="number"
-                        size={5}
-                        editEnabled={editEnabled}
-                        className="end-year"
-                    />
-                </div>
+                <YearRangeComponent 
+                    editEnabled={editEnabled}
+                />
                 {this.props.canRemove && 
                     <button onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}>Remove</button>
                 }
