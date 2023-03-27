@@ -46,6 +46,7 @@ class PracticalExperienceSection extends React.Component{
                 title="Practical Experience"
                 editEnabled={editEnabled}
                 onEditEnabledChanged={this.onEditEnabledChanged}
+                className="practical-epxerience-section"
                 previewEnabled={this.props.previewEnabled}
             >
                 {this.state.practicalExperiences.map((item) => {
