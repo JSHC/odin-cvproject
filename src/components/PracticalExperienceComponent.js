@@ -33,6 +33,7 @@ class PracticalExperienceComponent extends React.Component {
                 />
                 <YearRangeComponent 
                     editEnabled={editEnabled}
+                    className='practical-experience-years'
                 />
                 {this.props.canRemove && 
                     <button onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}>Remove</button>
