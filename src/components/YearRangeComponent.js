@@ -1,5 +1,6 @@
 import React from 'react';
 import Field from './Field';
+import '../styles/YearRangeComponent.css';
 
 class YearRangeComponent extends React.Component {
     render() {
