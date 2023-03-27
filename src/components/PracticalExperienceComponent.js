@@ -32,17 +32,19 @@ class PracticalExperienceComponent extends React.Component {
                 />
                 <div className="practical-experience-dates-container">
                     <Field
-                        label="Start Date"
-                        type="date"
+                        label="Start Year"
+                        type="number"
+                        size={5}
                         editEnabled={editEnabled}
-                        className="start-date"
+                        className="start-year"
                     />
                     <span>-</span>
                     <Field
-                        label="End Date"
-                        type="date"
+                        label="End Year"
+                        type="number"
+                        size={5}
                         editEnabled={editEnabled}
-                        className="end-date"
+                        className="end-year"
                     />
                 </div>
                 {this.props.canRemove && 
