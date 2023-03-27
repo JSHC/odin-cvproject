@@ -28,27 +28,8 @@
     margin-bottom: 2rem;
 }
 
-.practical-experience-dates-container {
-    grid-row: 1;
-    grid-column: 2;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    font-size: 14px;
-    align-items: end;
-    justify-self: start;
-    gap: 5px;
-}
-
-.start-date-container {
-    grid-column: 1;
+.practical-experience-years {
     justify-self: end;
-}
-
-.practical-experience-dates-container span {
-    justify-self: center;
-}
-
-.end-date-container {
-    grid-column: 3;
-    justify-self: start;
+    grid-row: 1;
+    align-self: end;
 }
