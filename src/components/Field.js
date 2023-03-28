@@ -19,13 +19,23 @@ class Field extends React.Component {
                     {this.props.label}
                     
                             <div>
-                            <input 
-                            type={this.props.type} 
-                            onChange={this.onFieldChange}
-                            value={this.props.fieldValue}
-                            className={this.props.className + '-input'}
-                            size={this.props.fieldValue.length > this.props.size ? this.props.fieldValue.length + 4 : this.props.size}
-                            />
+                            {this.props.type === 'checkbox' ? 
+                                <input 
+                                type={this.props.type} 
+                                onChange={this.onFieldChange}
+                                checked={this.props.fieldValue}
+                                className={this.props.className + '-input'}
+                                size={this.props.fieldValue.length > this.props.size ? this.props.fieldValue.length + 4 : this.props.size}
+                                />
+                                :
+                                <input 
+                                type={this.props.type} 
+                                onChange={this.onFieldChange}
+                                value={this.props.fieldValue}
+                                className={this.props.className + '-input'}
+                                size={this.props.fieldValue.length > this.props.size ? this.props.fieldValue.length + 4 : this.props.size}
+                                />
+                            }
                             </div>
                 </label>
             )
