@@ -5,6 +5,32 @@ import YearRangeComponent from './YearRangeComponent';
 
 class PracticalExperienceComponent extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            positionTitle: '',
+            companyName: '',
+            description: '',
+        }
+
+        this.onPositionTitleChanged = this.onPositionTitleChanged.bind(this);
+        this.onCompanyNameChanged = this.onCompanyNameChanged.bind(this);
+        this.onDescriptionChanged = this.onDescriptionChanged.bind(this);
+    }
+
+    onPositionTitleChanged(e) {
+        this.setState({positionTitle: e.target.value})
+    }
+
+    onCompanyNameChanged(e) {
+        this.setState({companyName: e.target.value})
+    }
+
+    onDescriptionChanged(e) {
+        this.setState({description: e.target.value})
+    }
+
     render() {
         const { editEnabled } = this.props;
         return (
@@ -16,6 +42,8 @@ class PracticalExperienceComponent extends React.Component {
                     editEnabled={editEnabled}
                     className="position-title"
                     size={25}
+                    fieldValue={this.state.positionTitle}
+                    onFieldValueChanged={this.onPositionTitleChanged}
                 />
                 <Field 
                     label="Company Name"
@@ -23,6 +51,8 @@ class PracticalExperienceComponent extends React.Component {
                     editEnabled={editEnabled}
                     className="company-name"
                     size={35}
+                    fieldValue={this.state.companyName}
+                    onFieldValueChanged={this.onCompanyNameChanged}
                 />
             </div>
                 <Field 
@@ -30,6 +60,8 @@ class PracticalExperienceComponent extends React.Component {
                     type="text"
                     editEnabled={editEnabled}
                     className="description"
+                    fieldValue={this.state.description}
+                    onFieldValueChanged={this.onDescriptionChanged}
                 />
                 <YearRangeComponent 
                     editEnabled={editEnabled}

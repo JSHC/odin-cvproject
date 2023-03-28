@@ -4,6 +4,26 @@ import '../styles/EducationComponent.css';
 import YearRangeComponent from './YearRangeComponent';
 
 class EducationComponent extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            education: '',
+            schoolName: '',
+        }
+
+        this.onEducationChanged = this.onEducationChanged.bind(this);
+        this.onSchoolNameChanged = this.onSchoolNameChanged.bind(this);
+    }
+
+    onEducationChanged(e) {
+        this.setState({education: e.target.value})
+    }
+
+    onSchoolNameChanged(e) {
+        this.setState({schoolName: e.target.value})
+    }
+
     render() {
         const editEnabled = this.props.editEnabled && !this.props.previewEnabled;
         return (
@@ -13,7 +33,9 @@ class EducationComponent extends React.Component {
                     type="text"
                     className="education"
                     editEnabled={editEnabled} 
-                    size={30}                        
+                    size={30}                
+                    fieldValue={this.state.education}      
+                    onFieldValueChanged={this.onEducationChanged}  
                     />
                     
                 <Field 
@@ -22,6 +44,8 @@ class EducationComponent extends React.Component {
                     className="school-name"
                     editEnabled={editEnabled} 
                     size={35}
+                    fieldValue={this.state.schoolName}        
+                    onFieldValueChanged={this.onSchoolNameChanged}  
                     />
                 <YearRangeComponent 
                     editEnabled={editEnabled}

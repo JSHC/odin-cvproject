@@ -7,12 +7,38 @@ class PersonalInfoSection extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {editEnabled: true}
+        this.state = {
+            editEnabled: true,
+            firstName: '',
+            lastName: '',
+            telephone: '',
+            email: '',
+        }
         this.onEditEnabledChanged = this.onEditEnabledChanged.bind(this);
+        this.onFirstNameChanged = this.onFirstNameChanged.bind(this);
+        this.onLastNameChanged = this.onLastNameChanged.bind(this);
+        this.onTelephoneChanged = this.onTelephoneChanged.bind(this);
+        this.onEmailChanged = this.onEmailChanged.bind(this);
     }
 
     onEditEnabledChanged() {
         this.setState({editEnabled: !this.state.editEnabled})
+    }
+
+    onFirstNameChanged(e) {
+        this.setState({firstName: e.target.value})
+    }
+
+    onLastNameChanged(e) {
+        this.setState({lastName: e.target.value})
+    }
+
+    onTelephoneChanged(e) {
+        this.setState({telephone: e.target.value})
+    }
+
+    onEmailChanged(e) {
+        this.setState({email: e.target.value})
     }
 
     render() {
@@ -33,6 +59,8 @@ class PersonalInfoSection extends React.Component {
                     editEnabled={editEnabled}
                     className="first-name"
                     size={14}
+                    onFieldValueChanged={this.onFirstNameChanged}
+                    fieldValue={this.state.firstName}
                 />
                 <Field 
                     label="Lastname"
@@ -40,6 +68,8 @@ class PersonalInfoSection extends React.Component {
                     editEnabled={editEnabled}
                     className="last-name"
                     size={14}
+                    onFieldValueChanged={this.onLastNameChanged}
+                    fieldValue={this.state.lastName}
                 />
             </div>
                 <Field 
@@ -48,6 +78,8 @@ class PersonalInfoSection extends React.Component {
                     editEnabled={editEnabled}
                     className="telephone"
                     size={20}
+                    onFieldValueChanged={this.onTelephoneChanged}
+                    fieldValue={this.state.telephone}
                 />
                  <Field 
                     label="Email"
@@ -55,6 +87,8 @@ class PersonalInfoSection extends React.Component {
                     editEnabled={editEnabled}
                     className="email"
                     size={35}
+                    onFieldValueChanged={this.onEmailChanged}
+                    fieldValue={this.state.email}
                 />
             </Section>
         )

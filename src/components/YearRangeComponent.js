@@ -3,6 +3,33 @@ import Field from './Field';
 import '../styles/YearRangeComponent.css';
 
 class YearRangeComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            startYear: '',
+            endYear: '',
+            isCurrent: false
+        }
+
+        this.onStartYearChanged = this.onStartYearChanged.bind(this);
+        this.onEndYearChanged = this.onEndYearChanged.bind(this);
+        this.onIsCurrentChanged = this.onIsCurrentChanged.bind(this);
+    }
+
+    onStartYearChanged(e) {
+        this.setState({startYear: e.target.value})
+    }
+
+    onEndYearChanged(e) {
+        this.setState({endYear: e.target.value})
+    }
+
+    onIsCurrentChanged(e) {
+        this.setState({isCurrent: !this.state.isCurrent})
+    }
+
     render() {
         const { editEnabled } = this.props;
         return (
@@ -13,6 +40,8 @@ class YearRangeComponent extends React.Component {
                     size={5}
                     editEnabled={editEnabled}
                     className="start-year"
+                    fieldValue={this.state.startYear}
+                    onFieldValueChanged={this.onStartYearChanged}
                 />
                 <span className='divider'>-</span>
                 <Field 
@@ -21,6 +50,8 @@ class YearRangeComponent extends React.Component {
                     size={5}
                     editEnabled={editEnabled}
                     className="end-year"
+                    fieldValue={this.state.endYear}
+                    onFieldValueChanged={this.onEndYearChanged}
                 />
                 {editEnabled && 
                     <Field
@@ -28,6 +59,8 @@ class YearRangeComponent extends React.Component {
                     label="Is current"
                     editEnabled={editEnabled}
                     className="is-current"
+                    fieldValue={this.state.isCurrent}
+                    onFieldValueChanged={this.onIsCurrentChanged}
                     />
                 }
             </div>

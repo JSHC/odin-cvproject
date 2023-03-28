@@ -3,15 +3,11 @@ import React from 'react';
 class Field extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            fieldValue: '',
-            editEnabled: true,
-        }
 
         this.onFieldChange = this.onFieldChange.bind(this);
     }
     onFieldChange(e) {
-        this.setState({fieldValue: e.target.value})
+        this.props.onFieldValueChanged(e);
     }
 
     render() {
@@ -26,16 +22,16 @@ class Field extends React.Component {
                             <input 
                             type={this.props.type} 
                             onChange={this.onFieldChange}
-                            value={this.state.fieldValue}
+                            value={this.props.fieldValue}
                             className={this.props.className + '-input'}
-                            size={this.state.fieldValue.length > this.props.size ? this.state.fieldValue.length + 4 : this.props.size}
+                            size={this.props.fieldValue.length > this.props.size ? this.props.fieldValue.length + 4 : this.props.size}
                             />
                             </div>
                 </label>
             )
             :
                 <div className={this.props.className}>
-                    {this.state.fieldValue}
+                    {this.props.fieldValue}
                 </div>
             }
             </div>
