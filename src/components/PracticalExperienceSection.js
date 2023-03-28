@@ -2,6 +2,7 @@ import React from 'react';
 import PracticalExperienceComponent from './PracticalExperienceComponent';
 import Section from './Section';
 import uniqid from 'uniqid';
+import '../styles/PracticalExperienceSection.css';
 
 class PracticalExperienceSection extends React.Component{
     constructor(props) {
