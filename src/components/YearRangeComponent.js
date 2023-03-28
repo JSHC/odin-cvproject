@@ -44,6 +44,9 @@ class YearRangeComponent extends React.Component {
                     onFieldValueChanged={this.onStartYearChanged}
                 />
                 <span className='divider'>-</span>
+                {this.state.isCurrent === true ? 
+                <span>Current</span>
+                :
                 <Field 
                     label="End Year"
                     type="number"
@@ -53,6 +56,8 @@ class YearRangeComponent extends React.Component {
                     fieldValue={this.state.endYear}
                     onFieldValueChanged={this.onEndYearChanged}
                 />
+                }
+                
                 {editEnabled && 
                     <Field
                     type="checkbox" 
