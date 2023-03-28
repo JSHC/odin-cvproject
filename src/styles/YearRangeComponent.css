@@ -3,6 +3,7 @@
     grid-template-columns: auto auto auto;
     justify-items: center;
     font-size: 14px;
+    grid-auto-flow: column;
 }
 
 .start-year-container {
@@ -11,4 +12,8 @@
 
 .end-year-container {
     justify-self: start;
+}
+
+.is-current-container {
+    margin-left: 1rem;
 }

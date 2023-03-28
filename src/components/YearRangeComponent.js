@@ -22,6 +22,14 @@ class YearRangeComponent extends React.Component {
                     editEnabled={editEnabled}
                     className="end-year"
                 />
+                {editEnabled && 
+                    <Field
+                    type="checkbox" 
+                    label="Is current"
+                    editEnabled={editEnabled}
+                    className="is-current"
+                    />
+                }
             </div>
         )
     }
