@@ -1,6 +1,7 @@
 import React from 'react';
 import Field from './Field';
 import '../styles/EducationComponent.css';
+import YearRangeComponent from './YearRangeComponent';
 
 class EducationComponent extends React.Component {
     render() {
@@ -22,22 +23,10 @@ class EducationComponent extends React.Component {
                     editEnabled={editEnabled} 
                     size={35}
                     />
-                <div className='years-container'>
-                <Field
-                    label="Start year"
-                    type="number"
-                    className="start-year"
+                <YearRangeComponent 
                     editEnabled={editEnabled}
-                    size={5} />
-                <span>-</span>
-                <Field
-                    label="End year"
-                    type="number"
-                    className="end-year"
-                    editEnabled={editEnabled} 
-                    size={5}
-                    />
-                </div>
+                    className='education-years'
+                />
                 {(this.props.canRemove && editEnabled) && 
                     <button 
                         onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}
