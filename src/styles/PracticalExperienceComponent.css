@@ -1,20 +1,15 @@
 .practical-experience-component {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto auto 1fr;
 }
 
-.title-company-wrapper {
-    display: grid;
+.position-title-container {
     grid-row: 1;
 }
 
 .company-name-container {
     grid-row: 2;
-}
-
-.position-title-container {
-    grid-row: 1;
 }
 
 .position-title {
@@ -23,13 +18,13 @@
 }
 
 .description-container {
-    grid-row: 2;
+    grid-row: 3;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
 .practical-experience-years {
     justify-self: end;
-    grid-row: 1;
+    grid-row: 2;
     align-self: end;
 }
