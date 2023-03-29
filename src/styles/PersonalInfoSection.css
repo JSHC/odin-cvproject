@@ -3,6 +3,7 @@
     grid-template-columns: 1fr;
     justify-items: start;
     padding-bottom: 1rem;
+    grid-template-rows: auto 1fr auto;
 }
 
 .email-container {

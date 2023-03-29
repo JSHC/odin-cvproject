@@ -17,7 +17,7 @@ class Section extends React.Component {
                 <div className={`${this.props.className} section`}>
                     <h2 className='section-title'>{this.props.title}</h2>
                     {this.props.children && (
-                        <div>
+                        <div className='section-content'>
                             {this.props.children}
                         </div>
                     )}
