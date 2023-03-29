@@ -23,7 +23,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-      <div class="app-wrapper">
+      <div className="app-wrapper">
         <h1>CV Application</h1>
         <div className='preview-container'>
           <span>

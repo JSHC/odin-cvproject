@@ -35,7 +35,6 @@ class PracticalExperienceComponent extends React.Component {
         const { editEnabled } = this.props;
         return (
             <div className={this.props.className}>
-            <div className='title-company-wrapper'>
                 <Field 
                     label="Position Title"
                     type="text"
@@ -54,7 +53,6 @@ class PracticalExperienceComponent extends React.Component {
                     fieldValue={this.state.companyName}
                     onFieldValueChanged={this.onCompanyNameChanged}
                 />
-            </div>
                 <Field 
                     label="Description"
                     type="text"
