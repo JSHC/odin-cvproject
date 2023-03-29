@@ -4,7 +4,10 @@ import '../styles/IconButton.css';
 class IconButton extends React.Component {
     render() {
         return (
-            <button className='icon-button' onClick={this.props.onClick}>
+            <button 
+                className={`icon-button ${this.props.className}`}
+                onClick={this.props.onClick}
+            >
                 {this.props.icon}
                 <span>{this.props.text}</span>
             </button>
