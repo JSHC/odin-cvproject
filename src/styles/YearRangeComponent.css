@@ -17,3 +17,15 @@
 .is-current-container {
     margin-left: 1rem;
 }
+
+.start-year-label {
+    display: grid;
+}
+
+.end-year-label {
+    display: grid;
+}
+
+.divider {
+    margin: 0 5px;
+}
