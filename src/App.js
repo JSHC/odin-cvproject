@@ -23,19 +23,21 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-      <h1>CV Application</h1>
-      <div className='preview-container'>
-        <span>
-        Toggle preview mode
-        </span>
-        <ToggleButton 
-          previewEnabled={this.state.previewEnabled} 
-          onToggleChanged={this.onTogglePreviewClicked} />
-        </div>
-        <div className="cv-container">
-          <PersonalInfoSection previewEnabled={this.state.previewEnabled}/>
-          <EducationSection previewEnabled={this.state.previewEnabled}/>
-          <PracticalExperienceSection previewEnabled={this.state.previewEnabled}/>
+      <div class="app-wrapper">
+        <h1>CV Application</h1>
+        <div className='preview-container'>
+          <span>
+          Toggle preview mode
+          </span>
+          <ToggleButton 
+            previewEnabled={this.state.previewEnabled} 
+            onToggleChanged={this.onTogglePreviewClicked} />
+          </div>
+          <div className="cv-container">
+            <PersonalInfoSection previewEnabled={this.state.previewEnabled}/>
+            <EducationSection previewEnabled={this.state.previewEnabled}/>
+            <PracticalExperienceSection previewEnabled={this.state.previewEnabled}/>
+          </div>
         </div>
       </div>
     );
