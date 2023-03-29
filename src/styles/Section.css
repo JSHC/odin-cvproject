@@ -20,4 +20,10 @@
 
 .section-content {
     justify-self: start;
+    display: grid;
+}
+
+.section-content button {
+    justify-self: start;
+    align-self: end;
 }

@@ -1,4 +1,4 @@
-.practical-epxerience-section{
+.practical-epxerience-section {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto auto;
