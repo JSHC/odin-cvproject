@@ -3,6 +3,8 @@ import PracticalExperienceComponent from './PracticalExperienceComponent';
 import Section from './Section';
 import uniqid from 'uniqid';
 import '../styles/PracticalExperienceSection.css';
+import { FaPlusCircle } from 'react-icons/fa';
+import IconButton from './IconButton';
 
 class PracticalExperienceSection extends React.Component{
     constructor(props) {
@@ -62,7 +64,12 @@ class PracticalExperienceSection extends React.Component{
                 })}
 
                 {this.props.previewEnabled === false && 
-                    <button onClick={this.onAddButtonClicked}>Add</button>
+                    <IconButton
+                        className='add-button'
+                        onClick={this.onAddButtonClicked}
+                        text='Add'
+                        icon={<FaPlusCircle />}
+                    />
                 }
             </Section>
         )

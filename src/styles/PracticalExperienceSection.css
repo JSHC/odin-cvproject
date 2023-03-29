@@ -3,3 +3,12 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto auto;
 }
+
+.add-button {
+    background-color: rgb(120, 216, 91);
+    margin-bottom: 10px;
+}
+
+.add-button:hover {
+    background-color: rgb(162, 219, 144);
+}

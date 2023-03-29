@@ -2,6 +2,8 @@ import React from 'react';
 import Field from './Field';
 import '../styles/EducationComponent.css';
 import YearRangeComponent from './YearRangeComponent';
+import { FaTimesCircle } from 'react-icons/fa';
+import IconButton from './IconButton';
 
 class EducationComponent extends React.Component {
     constructor(props) {
@@ -52,12 +54,12 @@ class EducationComponent extends React.Component {
                     className='education-years'
                 />
                 {(this.props.canRemove && editEnabled) && 
-                    <button 
+                    <IconButton
+                        className='remove-education-button'
                         onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}
-                        className="remove-education-button"
-                    >
-                        Remove
-                    </button>
+                        text='Remove'
+                        icon={<FaTimesCircle />}
+                    />
                 }
             </div>
         )

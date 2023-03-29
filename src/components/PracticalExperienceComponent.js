@@ -2,6 +2,8 @@ import React from 'react';
 import Field from './Field';
 import '../styles/PracticalExperienceComponent.css';
 import YearRangeComponent from './YearRangeComponent';
+import { FaTimesCircle } from 'react-icons/fa';
+import IconButton from './IconButton';
 
 class PracticalExperienceComponent extends React.Component {
 
@@ -66,7 +68,12 @@ class PracticalExperienceComponent extends React.Component {
                     className='practical-experience-years'
                 />
                 {this.props.canRemove && 
-                    <button onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}>Remove</button>
+                    <IconButton
+                        className='remove-practical-experience-button'
+                        onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}
+                        text='Remove'
+                        icon={<FaTimesCircle />}
+                    />
                 }
             </div>
         )
