@@ -1,3 +1,26 @@
 .icon-button {
-    
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+    column-gap: 5px;
+    background-color: rgb(47, 172, 255);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    background-color: rgb(108, 196, 255);
+}
+
+.icon-button svg {
+    justify-self: end;
+    fill: #fff;
+}
+
+.icon-button span {
+    justify-self: start;
+    color: #fff;
+    font-weight: bold;
 }
