@@ -1,6 +1,7 @@
 import React from 'react';
 import Field from './Field';
 import '../styles/YearRangeComponent.css';
+import SelectField from './SelectField';
 
 class YearRangeComponent extends React.Component {
 
@@ -8,8 +9,8 @@ class YearRangeComponent extends React.Component {
         super(props);
 
         this.state = {
-            startYear: '',
-            endYear: '',
+            startYear: new Date().getFullYear(),
+            endYear: new Date().getFullYear(),
             isCurrent: false
         }
 
@@ -34,10 +35,8 @@ class YearRangeComponent extends React.Component {
         const { editEnabled } = this.props;
         return (
             <div className={`year-range-component ${this.props.className}`}>
-                <Field 
+                <SelectField 
                     label="Start Year"
-                    type="number"
-                    size={5}
                     editEnabled={editEnabled}
                     className="start-year"
                     fieldValue={this.state.startYear}
@@ -47,10 +46,8 @@ class YearRangeComponent extends React.Component {
                 {this.state.isCurrent === true ? 
                 <span>Current</span>
                 :
-                <Field 
+                <SelectField 
                     label="End Year"
-                    type="number"
-                    size={5}
                     editEnabled={editEnabled}
                     className="end-year"
                     fieldValue={this.state.endYear}
