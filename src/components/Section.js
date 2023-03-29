@@ -1,5 +1,8 @@
 import React from 'react';
 import '../styles/Section.css';
+import IconButton from './IconButton';
+import { FaSave, FaEdit } from 'react-icons/fa';
+
 
 class Section extends React.Component {
     constructor(props) {
@@ -23,11 +26,11 @@ class Section extends React.Component {
                     )}
 
                     {this.props.previewEnabled === false && 
-                        <button
-                        onClick={this.onEditButtonClicked}
-                        className='save-button'>
-                        {this.props.editEnabled ? 'Save' : 'Edit'}
-                        </button>
+                        <IconButton 
+                            onClick={this.onEditButtonClicked} 
+                            text={this.props.editEnabled ? 'Save' : 'Edit'}
+                            icon={this.props.editEnabled ? <FaSave /> : <FaEdit />}
+                        />
                     }
                 </div>
             )
