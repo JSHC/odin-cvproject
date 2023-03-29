@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/IconButton.css';
 
 class IconButton extends React.Component {
     render() {
