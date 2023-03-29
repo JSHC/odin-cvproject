@@ -24,7 +24,7 @@ class SelectField extends React.Component {
                     
                             <select name={this.props.name} onChange={this.props.onFieldValueChanged}>
                                 {this.years.map(year => {
-                                    return <option name={this.props.name} selected={this.props.fieldValue === year}>{year}</option>
+                                    return <option name={this.props.name} key={year} selected={this.props.fieldValue === year.toString()}>{year}</option>
                                 })}
                             </select>
                 </label>
