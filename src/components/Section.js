@@ -27,6 +27,7 @@ class Section extends React.Component {
 
                     {this.props.previewEnabled === false && 
                         <IconButton 
+                            className='save-button'
                             onClick={this.onEditButtonClicked} 
                             text={this.props.editEnabled ? 'Save' : 'Edit'}
                             icon={this.props.editEnabled ? <FaSave /> : <FaEdit />}
