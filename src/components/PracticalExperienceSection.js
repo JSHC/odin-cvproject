@@ -65,7 +65,7 @@ class PracticalExperienceSection extends React.Component{
 
                 {this.props.previewEnabled === false && 
                     <IconButton
-                        className='add-button'
+                        className='add-button icon-button-green'
                         onClick={this.onAddButtonClicked}
                         text='Add'
                         icon={<FaPlusCircle />}

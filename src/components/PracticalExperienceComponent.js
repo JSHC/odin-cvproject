@@ -69,7 +69,7 @@ class PracticalExperienceComponent extends React.Component {
                 />
                 {this.props.canRemove && 
                     <IconButton
-                        className='remove-practical-experience-button'
+                        className='remove-practical-experience-button icon-button-red'
                         onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}
                         text='Remove'
                         icon={<FaTimesCircle />}

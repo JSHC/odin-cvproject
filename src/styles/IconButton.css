@@ -24,3 +24,20 @@
     color: #fff;
     font-weight: bold;
 }
+
+.icon-button-green {
+    background-color: rgb(120, 216, 91);
+    margin-bottom: 10px;
+}
+
+.icon-button-green:hover {
+    background-color: rgb(162, 219, 144);
+}
+
+.icon-button-red {
+    background-color: rgb(255, 68, 68);
+}
+
+.icon-button-red:hover {
+    background-color: rgb(248, 90, 90);
+}

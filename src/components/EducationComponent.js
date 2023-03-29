@@ -55,7 +55,7 @@ class EducationComponent extends React.Component {
                 />
                 {(this.props.canRemove && editEnabled) && 
                     <IconButton
-                        className='remove-education-button'
+                        className='remove-education-button icon-button-red'
                         onClick={(e) => this.props.onRemoveButtonClicked(e, this.props.id)}
                         text='Remove'
                         icon={<FaTimesCircle />}
