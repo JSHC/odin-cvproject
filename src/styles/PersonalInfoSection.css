@@ -1,19 +1,29 @@
 .personal-info-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: start;
-    padding-bottom: 1rem;
     grid-template-rows: auto 1fr auto;
+
+}
+
+.personal-info-section .section-content {
+    grid-template-columns: 1fr 1fr;
 }
 
 .email-container {
     grid-row: 3;
 }
 
+.email-label {
+    display: grid;
+}
+
+.telephone-label {
+    display: grid;
+}
+
 .name-container {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-column: 1 / span 2;
+    justify-items: start;
 }
 
 .first-name-container {
@@ -24,6 +34,10 @@
     font-size: 22px;
 }
 
-.personal-info-section .section-content {
-    margin-bottom: 1rem;
+.telephone-input {
+    width: 60%;
+}
+
+.email-input {
+    width: 80%;
 }

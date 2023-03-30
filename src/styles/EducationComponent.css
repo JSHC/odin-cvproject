@@ -13,6 +13,10 @@
     font-weight: bold;
 }
 
+.education-input {
+    width: 80%;
+}
+
 .school-name-container {
     grid-row: 2;
 }
@@ -20,6 +24,10 @@
 .school-name {
     font-weight: lighter;
     color: #555;
+}
+
+.school-name-input {
+    width: 90%;
 }
 
 .education-years {

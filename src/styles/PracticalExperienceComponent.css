@@ -13,9 +13,17 @@
     grid-row: 2;
 }
 
+.company-name-input {
+    width: 85%;
+}
+
 .position-title {
     font-weight: bold;
     font-size: 18px;
+}
+
+.position-title-input {
+    width: 70%;
 }
 
 .description-container {
@@ -29,6 +37,15 @@
     justify-self: end;
     grid-row: 2;
     align-self: end;
+}
+
+.description-textarea {
+    width: 100%;
+}
+
+.description {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 .remove-practical-experience-button {

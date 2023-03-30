@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Field.css'
 
 class Field extends React.Component {
     constructor(props) {
@@ -15,10 +16,8 @@ class Field extends React.Component {
             <div className={this.props.className + '-container'}>
             {this.props.editEnabled ? 
             (
-                <label className={this.props.className + '-label'}>
+                <label className={`field-label ${this.props.className}-label`}>
                     {this.props.label}
-                    
-                            <div>
                             {this.props.type === 'checkbox' ? 
                                 <input 
                                 type={this.props.type} 
@@ -34,7 +33,6 @@ class Field extends React.Component {
                                 className={this.props.className + '-input'}
                                 />
                             }
-                            </div>
                 </label>
             )
             :
