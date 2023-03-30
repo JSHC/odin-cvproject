@@ -21,6 +21,7 @@
 .section-content {
     justify-self: start;
     display: grid;
+    margin-bottom: 1rem;
 }
 
 .section-content button {

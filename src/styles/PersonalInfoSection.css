@@ -23,3 +23,7 @@
 .first-name, .first-name-input, .last-name, .last-name-input {
     font-size: 22px;
 }
+
+.personal-info-section .section-content {
+    margin-bottom: 1rem;
+}
