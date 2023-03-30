@@ -19,11 +19,13 @@ class TextAreaField extends React.Component {
                     {this.props.label}
                         <div>
                             <textarea 
+                                value={this.props.fieldValue}
                                 className={this.props.className + '-textarea'}
                                 cols={this.props.cols || 32}
                                 rows={this.props.rows || 12}
+                                onChange={this.onFieldChange}
                             >
-                                </textarea>
+                            </textarea>
                         </div>
                 </label>
             )
