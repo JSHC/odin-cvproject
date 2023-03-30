@@ -22,7 +22,7 @@ class TextAreaField extends React.Component {
                             <textarea 
                                 value={this.props.fieldValue}
                                 className={`textarea-field ${this.props.className}-textarea`}
-                                cols={this.props.cols || 32}
+                                cols={this.props.cols || 40}
                                 rows={this.props.rows || 12}
                                 onChange={this.onFieldChange}
                             >
