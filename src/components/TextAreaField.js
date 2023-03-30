@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/TextAreaField.css';
 
 class TextAreaField extends React.Component {
     constructor(props) {
