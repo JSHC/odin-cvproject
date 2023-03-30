@@ -4,6 +4,7 @@ import '../styles/PracticalExperienceComponent.css';
 import YearRangeComponent from './YearRangeComponent';
 import { FaTimesCircle } from 'react-icons/fa';
 import IconButton from './IconButton';
+import TextAreaField from './TextAreaField';
 
 class PracticalExperienceComponent extends React.Component {
 
@@ -55,9 +56,8 @@ class PracticalExperienceComponent extends React.Component {
                     fieldValue={this.state.companyName}
                     onFieldValueChanged={this.onCompanyNameChanged}
                 />
-                <Field 
+                <TextAreaField 
                     label="Description"
-                    type="text"
                     editEnabled={editEnabled}
                     className="description"
                     fieldValue={this.state.description}
