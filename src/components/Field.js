@@ -25,7 +25,6 @@ class Field extends React.Component {
                                 onChange={this.onFieldChange}
                                 checked={this.props.fieldValue}
                                 className={this.props.className + '-input'}
-                                size={this.props.fieldValue.length > this.props.size ? this.props.fieldValue.length + 4 : this.props.size}
                                 />
                                 :
                                 <input 
