@@ -1,42 +1,31 @@
 import _ from 'lodash';
 import React from 'react';
 
-class SelectField extends React.Component {
-    constructor(props) {
-        super(props);
+const SelectField = (props) => {
+    const year = new Date().getFullYear();
+    const years = _.range(1900, year + 1);
 
-        this.onFieldChange = this.onFieldChange.bind(this);
-        
-        const year = new Date().getFullYear();
-        this.years = _.range(1900, year + 1);
-    }
-    onFieldChange(e) {
-        this.props.onFieldValueChanged(e);
-    }
-
-    render() {
-        return (
-            <div className={this.props.className + '-container'}>
-            {this.props.editEnabled ? 
-            (
-                <label className={this.props.className + '-label'}>
-                    {this.props.label}
-                    
-                            <select name={this.props.name} onChange={this.props.onFieldValueChanged} value={this.props.fieldValue}>
-                                {this.years.map(year => {
-                                    return <option name={this.props.name} key={year}>{year}</option>
-                                })}
-                            </select>
-                </label>
-            )
-            :
-                <div className={this.props.className}>
-                    {this.props.fieldValue}
-                </div>
-            }
-            </div>
+    return (
+        <div className={props.className + '-container'}>
+        {props.editEnabled ? 
+        (
+            <label className={props.className + '-label'}>
+                {props.label}
+                
+                        <select name={props.name} onChange={props.onFieldValueChanged} value={props.fieldValue}>
+                            {years.map(item => {
+                                return <option name={props.name} key={item}>{item}</option>
+                            })}
+                        </select>
+            </label>
         )
-    }
+        :
+            <div className={props.className}>
+                {props.fieldValue}
+            </div>
+        }
+        </div>
+    )
 }
 
 export default SelectField;
