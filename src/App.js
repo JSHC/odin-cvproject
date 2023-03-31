@@ -1,28 +1,19 @@
 import PersonalInfoSection from "./components/PersonalInfoSection";
-import React from "react";
+import React, { useState } from "react";
 import EducationSection from "./components/EducationSection";
 import PracticalExperienceSection from "./components/PracticalExperienceSection";
 import './styles/App.css';
 import ToggleButton from "./components/ToggleButton";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editEnabled: true,
-      previewEnabled: false
-    }
+const App = () => {
+  const [previewEnabled, setPreviewEnabled] = useState(false);
 
-    this.onTogglePreviewClicked = this.onTogglePreviewClicked.bind(this);
+  const togglePreviewClicked = () => {
+    setPreviewEnabled(!previewEnabled);
   }
 
-  onTogglePreviewClicked() {
-    this.setState({previewEnabled: !this.state.previewEnabled});
-  }
-
-  render() {
-    return (
-      <div className="app">
+  return (
+    <div className="app">
       <div className="app-wrapper">
         <h1>CV Application</h1>
         <div className='preview-container'>
@@ -30,18 +21,17 @@ class App extends React.Component {
           Toggle preview mode
           </span>
           <ToggleButton 
-            previewEnabled={this.state.previewEnabled} 
-            onToggleChanged={this.onTogglePreviewClicked} />
+            previewEnabled={previewEnabled} 
+            onToggleChanged={togglePreviewClicked} />
           </div>
           <div className="cv-container">
-            <PersonalInfoSection previewEnabled={this.state.previewEnabled}/>
-            <EducationSection previewEnabled={this.state.previewEnabled}/>
-            <PracticalExperienceSection previewEnabled={this.state.previewEnabled}/>
+            <PersonalInfoSection previewEnabled={previewEnabled}/>
+            <EducationSection previewEnabled={previewEnabled}/>
+            <PracticalExperienceSection previewEnabled={previewEnabled}/>
           </div>
         </div>
       </div>
-    );
-  }
+  )
 }
 
 export default App;
