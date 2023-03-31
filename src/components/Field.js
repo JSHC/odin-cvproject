@@ -1,48 +1,41 @@
 import React from 'react';
 import '../styles/Field.css'
 
-class Field extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.onFieldChange = this.onFieldChange.bind(this);
-    }
-    onFieldChange(e) {
-        this.props.onFieldValueChanged(e);
+const Field = (props) => {
+    const onFieldChange = (e) => {
+        props.onFieldValueChanged(e);
     }
 
-    render() {
-        return (
-            <div className={this.props.className + '-container'}>
-            {this.props.editEnabled ? 
+    return (
+        <div className={props.className + '-container'}>
+            {props.editEnabled ? 
             (
-                <label className={`field-label ${this.props.className}-label`}>
-                    {this.props.label}
-                            {this.props.type === 'checkbox' ? 
+                <label className={`field-label ${props.className}-label`}>
+                    {props.label}
+                            {props.type === 'checkbox' ? 
                                 <input 
-                                type={this.props.type} 
-                                onChange={this.onFieldChange}
-                                checked={this.props.fieldValue}
-                                className={this.props.className + '-input'}
+                                type={props.type} 
+                                onChange={onFieldChange}
+                                checked={props.fieldValue}
+                                className={props.className + '-input'}
                                 />
                                 :
                                 <input 
-                                type={this.props.type} 
-                                onChange={this.onFieldChange}
-                                value={this.props.fieldValue}
-                                className={this.props.className + '-input'}
+                                type={props.type} 
+                                onChange={onFieldChange}
+                                value={props.fieldValue}
+                                className={props.className + '-input'}
                                 />
                             }
                 </label>
             )
             :
-                <div className={this.props.className}>
-                    {this.props.fieldValue}
+                <div className={props.className}>
+                    {props.fieldValue}
                 </div>
             }
             </div>
-        )
-    }
+    )
 }
 
 export default Field;
