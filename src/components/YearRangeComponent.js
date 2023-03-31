@@ -1,73 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Field from './Field';
 import '../styles/YearRangeComponent.css';
 import SelectField from './SelectField';
 
-class YearRangeComponent extends React.Component {
+const YearRangeComponent = (props) => {
+    const [startYear, setStartYear] = useState(new Date().getFullYear());
+    const [endYear, setEndYear] = useState(new Date().getFullYear());
+    const [isCurrent, setIsCurrent] = useState(false);
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            startYear: new Date().getFullYear(),
-            endYear: new Date().getFullYear(),
-            isCurrent: false
-        }
-
-        this.onStartYearChanged = this.onStartYearChanged.bind(this);
-        this.onEndYearChanged = this.onEndYearChanged.bind(this);
-        this.onIsCurrentChanged = this.onIsCurrentChanged.bind(this);
+    const onStartYearChanged = (e) => {
+        setStartYear(e.target.value);
     }
 
-    onStartYearChanged(e) {
-        this.setState({startYear: e.target.value})
+    const onEndYearChanged = (e) => {
+        setEndYear(e.target.value);
     }
 
-    onEndYearChanged(e) {
-        this.setState({endYear: e.target.value})
+    const onIsCurrentChanged = () => {
+        setIsCurrent(!isCurrent);
     }
 
-    onIsCurrentChanged(e) {
-        this.setState({isCurrent: !this.state.isCurrent})
-    }
-
-    render() {
-        const { editEnabled } = this.props;
-        return (
-            <div className={`year-range-component ${this.props.className}`}>
-                <SelectField 
-                    label="Start Year"
-                    editEnabled={editEnabled}
-                    className="start-year"
-                    fieldValue={this.state.startYear}
-                    onFieldValueChanged={this.onStartYearChanged}
+    const { editEnabled } = props;
+    return (
+        <div className={`year-range-component ${props.className}`}>
+            <SelectField 
+                label="Start Year"
+                editEnabled={editEnabled}
+                className="start-year"
+                fieldValue={startYear}
+                onFieldValueChanged={onStartYearChanged}
+            />
+            <span className='divider'>-</span>
+            {isCurrent === true ? 
+            <span>Current</span>
+            :
+            <SelectField 
+                label="End Year"
+                editEnabled={editEnabled}
+                className="end-year"
+                fieldValue={endYear}
+                onFieldValueChanged={onEndYearChanged}
+            />
+            }
+            
+            {editEnabled && 
+                <Field
+                type="checkbox" 
+                label="Is current"
+                editEnabled={editEnabled}
+                className="is-current"
+                fieldValue={isCurrent}
+                onFieldValueChanged={onIsCurrentChanged}
                 />
-                <span className='divider'>-</span>
-                {this.state.isCurrent === true ? 
-                <span>Current</span>
-                :
-                <SelectField 
-                    label="End Year"
-                    editEnabled={editEnabled}
-                    className="end-year"
-                    fieldValue={this.state.endYear}
-                    onFieldValueChanged={this.onEndYearChanged}
-                />
-                }
-                
-                {editEnabled && 
-                    <Field
-                    type="checkbox" 
-                    label="Is current"
-                    editEnabled={editEnabled}
-                    className="is-current"
-                    fieldValue={this.state.isCurrent}
-                    onFieldValueChanged={this.onIsCurrentChanged}
-                    />
-                }
-            </div>
-        )
-    }
+            }
+        </div>
+    )
 }
 
 export default YearRangeComponent;
