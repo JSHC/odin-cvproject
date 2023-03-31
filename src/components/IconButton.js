@@ -1,18 +1,16 @@
 import React from 'react';
 import '../styles/IconButton.css';
 
-class IconButton extends React.Component {
-    render() {
-        return (
-            <button 
-                className={`icon-button ${this.props.className}`}
-                onClick={this.props.onClick}
+const IconButton = (props) => {
+    return (
+        <button 
+                className={`icon-button ${props.className}`}
+                onClick={props.onClick}
             >
-                {this.props.icon}
-                <span>{this.props.text}</span>
+                {props.icon}
+                <span>{props.text}</span>
             </button>
-        )
-    }
+    )
 }
 
 export default IconButton;
