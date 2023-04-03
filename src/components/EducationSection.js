@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EducationComponent from './EducationComponent';
 import Section from './Section';
 import uniqid from 'uniqid';
@@ -6,74 +6,64 @@ import '../styles/EducationSection.css';
 import { FaPlusCircle } from 'react-icons/fa';
 import IconButton from './IconButton';
 
-class EducationSection extends React.Component {
-    constructor(props) {
-        super(props);
+const EducationSection = (props) => {
+    const [editEnabled, setEditEnabled] = useState(true);
+    const [educations, setEducations] = useState(
+        [{id: uniqid(), canRemove: false}]
+    );
 
-        this.state = {
-            editEnabled: true,
-            educations: [{id: uniqid(), canRemove: false}],
-        }
-
-        this.onEditEnabledChanged = this.onEditEnabledChanged.bind(this);
-        this.onAddButtonClicked = this.onAddButtonClicked.bind(this);
-        this.onRemoveEducation = this.onRemoveEducation.bind(this);
+    const onEditEnabledChanged = () => {
+        setEditEnabled(!editEnabled)
     }
 
-    onEditEnabledChanged() {
-        this.setState({editEnabled: !this.state.editEnabled})
+    const onAddButtonClicked = () => {
+        addEducation(true)
     }
 
-    onAddButtonClicked() {
-        this.addEducation(true)
-    }
-
-    addEducation(canRemove) {
-        this.setState((prevState) => ({
-            educations: prevState.educations.concat({id: uniqid(), canRemove: canRemove})
-        }))
-    }
-
-    onRemoveEducation(e, id) {
-        const newEducations = this.state.educations.filter((item) => {
-            return id !== item.id;
-        })
-        this.setState({educations: newEducations})
-    }
-
-    render() {
-        const editEnabled = this.state.editEnabled && !this.props.previewEnabled;
-        
-        return (
-            <Section
-                title="Education"
-                editEnabled={editEnabled}
-                onEditEnabledChanged={this.onEditEnabledChanged}
-                className="education-section"
-                previewEnabled={this.props.previewEnabled}
-            >
-                {this.state.educations.map((item) => {
-                    return <EducationComponent 
-                                id={item.id} 
-                                editEnabled={editEnabled}
-                                onRemoveButtonClicked={this.onRemoveEducation}
-                                key={item.id}
-                                canRemove={item.canRemove}
-                                className="education-component"
-                                />;
-                })}
-
-                {this.props.previewEnabled === false && 
-                    <IconButton
-                        className='add-button icon-button-green'
-                        onClick={this.onAddButtonClicked}
-                        text='Add'
-                        icon={<FaPlusCircle />}
-                    />
-                }
-            </Section>
+    const addEducation = (canRemove) => {
+        setEducations(
+            educations.concat({id: uniqid(), canRemove: canRemove})
         )
     }
+
+    const onRemoveEducation = (e, id) => {
+        const newEducations = educations.filter((item) => {
+            return id !== item.id;
+        })
+        setEducations(newEducations)
+    }
+
+    const canEdit = editEnabled && !props.previewEnabled;
+        
+    return (
+        <Section
+            title="Education"
+            editEnabled={canEdit}
+            onEditEnabledChanged={onEditEnabledChanged}
+            className="education-section"
+            previewEnabled={props.previewEnabled}
+        >
+            {educations.map((item) => {
+                return <EducationComponent 
+                            id={item.id} 
+                            editEnabled={canEdit}
+                            onRemoveButtonClicked={onRemoveEducation}
+                            key={item.id}
+                            canRemove={item.canRemove}
+                            className="education-component"
+                            />;
+            })}
+
+            {props.previewEnabled === false && 
+                <IconButton
+                    className='add-button icon-button-green'
+                    onClick={onAddButtonClicked}
+                    text='Add'
+                    icon={<FaPlusCircle />}
+                />
+            }
+        </Section>
+    )
 }
 
 export default EducationSection;
