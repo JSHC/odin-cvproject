@@ -1,98 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Field from './Field';
 import Section from './Section';
 import '../styles/PersonalInfoSection.css';
 
-class PersonalInfoSection extends React.Component {
-    constructor(props) {
-        super(props);
+const PersonalInfoSection = (props) => {
+    const [editEnabled, setEditEnabled] = useState(true);
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [telephone, setTelephone] = useState('');
+    const [email, setEmail] = useState('');
 
-        this.state = {
-            editEnabled: true,
-            firstName: '',
-            lastName: '',
-            telephone: '',
-            email: '',
-        }
-        this.onEditEnabledChanged = this.onEditEnabledChanged.bind(this);
-        this.onFirstNameChanged = this.onFirstNameChanged.bind(this);
-        this.onLastNameChanged = this.onLastNameChanged.bind(this);
-        this.onTelephoneChanged = this.onTelephoneChanged.bind(this);
-        this.onEmailChanged = this.onEmailChanged.bind(this);
+    const onEditEnabledChanged = () => {
+        setEditEnabled(!editEnabled);
     }
 
-    onEditEnabledChanged() {
-        this.setState({editEnabled: !this.state.editEnabled})
+    const onFirstNameChanged = (e) => {
+        setFirstName(e.target.value);
     }
 
-    onFirstNameChanged(e) {
-        this.setState({firstName: e.target.value})
+    const onLastNameChanged = (e) => {
+        setLastName(e.target.value);
     }
 
-    onLastNameChanged(e) {
-        this.setState({lastName: e.target.value})
+    const onTelephoneChanged = (e) => {
+        setTelephone(e.target.value);
     }
 
-    onTelephoneChanged(e) {
-        this.setState({telephone: e.target.value})
+    const onEmailChanged = (e) => {
+        setEmail(e.target.value);
     }
 
-    onEmailChanged(e) {
-        this.setState({email: e.target.value})
-    }
-
-    render() {
-        const editEnabled = this.state.editEnabled && !this.props.previewEnabled;
+    const canEdit = editEnabled && !props.previewEnabled;
         
         return (
             <Section 
                 title="Personal Information"
-                editEnabled={editEnabled}
-                onEditEnabledChanged={this.onEditEnabledChanged}
+                editEnabled={canEdit}
+                onEditEnabledChanged={onEditEnabledChanged}
                 className="personal-info-section"
-                previewEnabled={this.props.previewEnabled}
+                previewEnabled={props.previewEnabled}
             >
             <div className="name-container">
                 <Field 
                     label="Firstname"
                     type="text"
-                    editEnabled={editEnabled}
+                    editEnabled={canEdit}
                     className="first-name"
                     size={14}
-                    onFieldValueChanged={this.onFirstNameChanged}
-                    fieldValue={this.state.firstName}
+                    onFieldValueChanged={onFirstNameChanged}
+                    fieldValue={firstName}
                 />
                 <Field 
                     label="Lastname"
                     type="text"
-                    editEnabled={editEnabled}
+                    editEnabled={canEdit}
                     className="last-name"
                     size={14}
-                    onFieldValueChanged={this.onLastNameChanged}
-                    fieldValue={this.state.lastName}
+                    onFieldValueChanged={onLastNameChanged}
+                    fieldValue={lastName}
                 />
             </div>
                 <Field 
                     label="Telephone"
                     type="text"
-                    editEnabled={editEnabled}
+                    editEnabled={canEdit}
                     className="telephone"
                     size={20}
-                    onFieldValueChanged={this.onTelephoneChanged}
-                    fieldValue={this.state.telephone}
+                    onFieldValueChanged={onTelephoneChanged}
+                    fieldValue={telephone}
                 />
                  <Field 
                     label="Email"
                     type="email"
-                    editEnabled={editEnabled}
+                    editEnabled={canEdit}
                     className="email"
                     size={35}
-                    onFieldValueChanged={this.onEmailChanged}
-                    fieldValue={this.state.email}
+                    onFieldValueChanged={onEmailChanged}
+                    fieldValue={email}
                 />
             </Section>
         )
-    }
 }
 
 export default PersonalInfoSection;
